@@ -1,0 +1,110 @@
+name: Weekly Digest
+
+on:
+  schedule:
+    - cron: '0 8 * * 0'
+  workflow_dispatch:
+    inputs:
+      config:
+        description: 'Config file to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - image-based-linux
+
+concurrency:
+  group: digest-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set matrix
+        id: set-matrix
+        run: |
+          if [ "${{ github.event.inputs.config }}" == "all" ] || [ -z "${{ github.event.inputs.config }}" ]; then
+            CONFIGS=$(ls config/*.yaml 2>/dev/null | xargs -n1 basename 2>/dev/null | sed 's/.yaml$//' | jq -R -s -c 'split("\n") | map(select(. != ""))')
+            if [ "$CONFIGS" == "[]" ] || [ -z "$CONFIGS" ]; then
+              echo "No config files found"
+              exit 1
+            fi
+          else
+            CONFIGS='["${{ github.event.inputs.config }}"]'
+          fi
+          echo "matrix=${CONFIGS}" >> $GITHUB_OUTPUT
+
+  digest:
+    needs: prepare
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config: ${{ fromJson(needs.prepare.outputs.matrix) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      - name: Install dependencies
+        run: poetry install --no-interaction
+
+      - name: Run digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SMTP_HOST: ${{ vars.SMTP_HOST }}
+          SMTP_PORT: ${{ vars.SMTP_PORT }}
+          SMTP_USER: ${{ vars.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+          EMAIL_TO: ${{ vars.EMAIL_TO }}
+          DIGEST_EMAIL_ENABLED: "true"
+        run: |
+          poetry run digest \
+            --config "config/${{ matrix.config }}.yaml" \
+            --state-dir "state/${{ matrix.config }}" \
+            --output-dir "digests/${{ matrix.config }}"
+
+      - name: Commit digest and state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add "digests/${{ matrix.config }}/" "state/${{ matrix.config }}/"
+
+          DATE=$(date -u +%Y-%m-%d)
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "${{ matrix.config }}: ${DATE}"
+            git pull --rebase
+            git push
+          fi

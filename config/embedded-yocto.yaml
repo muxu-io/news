@@ -1,0 +1,158 @@
+meta:
+  name: "Embedded Yocto Development"
+  slug: "embedded-yocto"
+  description: "Digest covering Yocto Project, BSP layers for Raspberry Pi, NXP i.MX, NVIDIA Jetson, and embedded Linux ecosystem"
+  schedule: "0 7 * * *"
+
+sources:
+  # ===================
+  # Yocto Project Core
+  # ===================
+
+  - name: "Yocto Project Blog"
+    type: rss
+    url: "https://www.yoctoproject.org/feed/"
+
+  - name: "Yocto Mailing List"
+    type: rss
+    url: "https://lists.yoctoproject.org/g/yocto/rss"
+
+  - name: "Yocto Documentation Mailing List"
+    type: rss
+    url: "https://lists.yoctoproject.org/g/docs/rss"
+
+  - name: "Yocto Announce"
+    type: rss
+    url: "https://lists.yoctoproject.org/g/yocto-announce/rss"
+
+  # ===================
+  # Raspberry Pi
+  # ===================
+
+  - name: "meta-raspberrypi Commits"
+    type: rss
+    url: "https://github.com/agherzan/meta-raspberrypi/commits/master.atom"
+
+  - name: "meta-raspberrypi Releases"
+    type: rss
+    url: "https://github.com/agherzan/meta-raspberrypi/releases.atom"
+
+  - name: "Raspberry Pi Blog"
+    type: rss
+    url: "https://www.raspberrypi.com/news/feed/"
+
+  # Note: Raspberry Pi Forums (forums.raspberrypi.com) blocks automated RSS access
+
+  # ===================
+  # NXP i.MX / Freescale
+  # ===================
+
+  - name: "meta-freescale Commits"
+    type: rss
+    url: "https://github.com/Freescale/meta-freescale/commits/master.atom"
+
+  - name: "meta-freescale Releases"
+    type: rss
+    url: "https://github.com/Freescale/meta-freescale/releases.atom"
+
+  - name: "meta-freescale Mailing List"
+    type: rss
+    url: "https://lists.yoctoproject.org/g/meta-freescale/rss"
+
+  - name: "meta-freescale-3rdparty Commits"
+    type: rss
+    url: "https://github.com/Freescale/meta-freescale-3rdparty/commits/master.atom"
+
+  # ===================
+  # NVIDIA Jetson / Tegra
+  # ===================
+
+  - name: "meta-tegra Commits"
+    type: rss
+    url: "https://github.com/OE4T/meta-tegra/commits/master.atom"
+
+  - name: "meta-tegra Releases"
+    type: rss
+    url: "https://github.com/OE4T/meta-tegra/releases.atom"
+
+  - name: "NVIDIA Developer Blog"
+    type: rss
+    url: "https://developer.nvidia.com/blog/feed/"
+
+  - name: "Jetson Forums"
+    type: rss
+    url: "https://forums.developer.nvidia.com/c/robotics-edge-computing/jetson-systems/70.rss"
+
+  - name: "Jetson AGX Orin Forums"
+    type: rss
+    url: "https://forums.developer.nvidia.com/c/robotics-edge-computing/jetson-systems/jetson-agx-orin/486.rss"
+
+  - name: "Jetson Orin Nano Forums"
+    type: rss
+    url: "https://forums.developer.nvidia.com/c/robotics-edge-computing/jetson-systems/jetson-orin-nano/632.rss"
+
+  # ===================
+  # Other Yocto Layers
+  # ===================
+
+  - name: "meta-arm Mailing List"
+    type: rss
+    url: "https://lists.yoctoproject.org/g/meta-arm/rss"
+
+  - name: "OpenEmbedded Core Commits"
+    type: rss
+    url: "https://github.com/openembedded/openembedded-core/commits/master.atom"
+
+  - name: "meta-openembedded Commits"
+    type: rss
+    url: "https://github.com/openembedded/meta-openembedded/commits/master.atom"
+
+  # ===================
+  # PCN / Product Updates
+  # ===================
+
+  # Note: NXP and NVIDIA PCNs require account-based email subscriptions.
+  # Raspberry Pi PCNs are available at pip.raspberrypi.com but lack RSS.
+  # We track release feeds and forums to catch announcements.
+
+  - name: "Raspberry Pi Downloads (OS Images)"
+    type: rss
+    url: "http://downloads.raspberrypi.org/rss.xml"
+
+  - name: "NVIDIA Jetson Downloads Page"
+    type: rss
+    url: "https://nvidianews.nvidia.com/rss.xml"
+
+filters:
+  time_window: "7d"
+  use_state: true
+  keywords:
+    include: []
+    exclude:
+      - "unsubscribe"
+      - "out of office"
+      - "auto-reply"
+      - "vacation"
+      - "automatic reply"
+  min_content_length: 50
+
+rate_limit:
+  delay_between_sources: 2
+  delay_between_requests: 1
+
+summarizer:
+  provider: gemini
+  model: gemini-2.0-flash
+  max_tokens: 8192
+  prompt_file: "../prompts/embedded-yocto.md"
+
+outputs:
+  - type: markdown
+    path: "digests/{slug}/{date}.md"
+    frontmatter: true
+
+  - type: email
+    enabled: false
+    format: plain
+    to: "${EMAIL_TO}"
+    subject: "[{name}] {time_window} digest - {date}"

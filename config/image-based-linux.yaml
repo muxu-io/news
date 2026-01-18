@@ -1,0 +1,162 @@
+meta:
+  name: "Image-Based Linux"
+  slug: "image-based-linux"
+  description: "Digest covering bootc, ostree, Fedora Atomic, Flatcar, Talos, Kairos and image-based OS technologies"
+  schedule: "0 7 * * *"
+
+sources:
+  # ===================
+  # Core Technologies
+  # ===================
+
+  # bootc - OCI bootable containers
+  - name: "bootc Releases"
+    type: rss
+    url: "https://github.com/containers/bootc/releases.atom"
+
+  # ostree - the foundation
+  - name: "ostree Releases"
+    type: rss
+    url: "https://github.com/ostreedev/ostree/releases.atom"
+
+  # rpm-ostree
+  - name: "rpm-ostree Releases"
+    type: rss
+    url: "https://github.com/coreos/rpm-ostree/releases.atom"
+
+  # ===================
+  # Fedora Ecosystem
+  # ===================
+
+  - name: "Fedora Planet"
+    type: rss
+    url: "https://fedoraplanet.org/rss20.xml"
+
+  - name: "Atomic Desktops Discourse"
+    type: discourse
+    base_url: "https://discussion.fedoraproject.org"
+    tags:
+      - "atomic-desktops"
+
+  - name: "Fedora CoreOS Discourse"
+    type: discourse
+    base_url: "https://discussion.fedoraproject.org"
+    tags:
+      - "coreos"
+
+  - name: "Fedora IoT Discourse"
+    type: discourse
+    base_url: "https://discussion.fedoraproject.org"
+    tags:
+      - "iot"
+
+  - name: "Silverblue Discourse"
+    type: discourse
+    base_url: "https://discussion.fedoraproject.org"
+    tags:
+      - "silverblue"
+
+  - name: "Kinoite Discourse"
+    type: discourse
+    base_url: "https://discussion.fedoraproject.org"
+    tags:
+      - "kinoite"
+
+  - name: "Bootc Discourse"
+    type: discourse
+    base_url: "https://discussion.fedoraproject.org"
+    tags:
+      - "bootc"
+
+  - name: "IoT Mailing List"
+    type: hyperkitty
+    base_url: "https://lists.fedoraproject.org/archives/list"
+    list_address: "iot@lists.fedoraproject.org"
+
+  - name: "CoreOS Mailing List"
+    type: hyperkitty
+    base_url: "https://lists.fedoraproject.org/archives/list"
+    list_address: "coreos@lists.fedoraproject.org"
+
+  - name: "Devel Mailing List (filtered)"
+    type: hyperkitty
+    base_url: "https://lists.fedoraproject.org/archives/list"
+    list_address: "devel@lists.fedoraproject.org"
+    keywords:
+      include:
+        - "atomic"
+        - "silverblue"
+        - "kinoite"
+        - "coreos"
+        - "ostree"
+        - "rpm-ostree"
+        - "bootc"
+        - "bootable container"
+        - "image mode"
+        - "composefs"
+
+  # ===================
+  # Flatcar
+  # ===================
+
+  - name: "Flatcar Blog"
+    type: rss
+    url: "https://www.flatcar.org/blog/index.xml"
+
+  - name: "Flatcar Releases"
+    type: rss
+    url: "https://github.com/flatcar/Flatcar/releases.atom"
+
+  # ===================
+  # Talos (Sidero Labs)
+  # ===================
+
+  - name: "Talos Releases"
+    type: rss
+    url: "https://github.com/siderolabs/talos/releases.atom"
+
+  # ===================
+  # Kairos
+  # ===================
+
+  - name: "Kairos Blog"
+    type: rss
+    url: "https://kairos.io/blog/index.xml"
+
+  - name: "Kairos Releases"
+    type: rss
+    url: "https://github.com/kairos-io/kairos/releases.atom"
+
+filters:
+  time_window: "7d"
+  use_state: true
+  keywords:
+    include: []
+    exclude:
+      - "unsubscribe"
+      - "out of office"
+      - "auto-reply"
+      - "vacation"
+      - "automatic reply"
+  min_content_length: 50
+
+rate_limit:
+  delay_between_sources: 2
+  delay_between_requests: 1
+
+summarizer:
+  provider: gemini
+  model: gemini-2.0-flash
+  max_tokens: 8192
+  prompt_file: "../prompts/image-based-linux.md"
+
+outputs:
+  - type: markdown
+    path: "digests/{slug}/{date}.md"
+    frontmatter: true
+
+  - type: email
+    enabled: false
+    format: plain
+    to: "${EMAIL_TO}"
+    subject: "[{name}] {time_window} digest - {date}"

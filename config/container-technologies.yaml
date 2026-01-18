@@ -1,0 +1,143 @@
+meta:
+  name: "Container Technologies"
+  slug: "container-technologies"
+  description: "Digest covering Docker, Podman, Buildah, Skopeo, containerd, and OCI ecosystem"
+  schedule: "0 7 * * *"
+
+sources:
+  # ===================
+  # Docker / Moby
+  # ===================
+
+  - name: "Moby Releases"
+    type: rss
+    url: "https://github.com/moby/moby/releases.atom"
+
+  - name: "Docker Blog"
+    type: rss
+    url: "https://www.docker.com/blog/feed/"
+
+  - name: "Docker Forums - Engine"
+    type: discourse
+    base_url: "https://forums.docker.com"
+    categories:
+      - path: "docker-engine"
+
+  - name: "Docker Forums - General"
+    type: discourse
+    base_url: "https://forums.docker.com"
+    categories:
+      - path: "general-discussions"
+
+  # ===================
+  # Podman Ecosystem
+  # ===================
+
+  - name: "Podman Releases"
+    type: rss
+    url: "https://github.com/containers/podman/releases.atom"
+
+  - name: "Podman Blog"
+    type: rss
+    url: "https://blog.podman.io/feed/"
+
+  # Note: Podman mailing list (lists.podman.io) does not expose RSS feeds
+  # Using GitHub Discussions as alternative community source
+
+  - name: "Podman Discussions"
+    type: rss
+    url: "https://github.com/containers/podman/discussions.atom"
+
+  - name: "Podman Desktop Releases"
+    type: rss
+    url: "https://github.com/containers/podman-desktop/releases.atom"
+
+  # ===================
+  # Build Tools
+  # ===================
+
+  - name: "Buildah Releases"
+    type: rss
+    url: "https://github.com/containers/buildah/releases.atom"
+
+  - name: "Skopeo Releases"
+    type: rss
+    url: "https://github.com/containers/skopeo/releases.atom"
+
+  - name: "BuildKit Releases"
+    type: rss
+    url: "https://github.com/moby/buildkit/releases.atom"
+
+  # ===================
+  # Container Runtimes
+  # ===================
+
+  - name: "containerd Releases"
+    type: rss
+    url: "https://github.com/containerd/containerd/releases.atom"
+
+  - name: "runc Releases"
+    type: rss
+    url: "https://github.com/opencontainers/runc/releases.atom"
+
+  - name: "crun Releases"
+    type: rss
+    url: "https://github.com/containers/crun/releases.atom"
+
+  # ===================
+  # OCI Standards
+  # ===================
+
+  - name: "OCI Image Spec Releases"
+    type: rss
+    url: "https://github.com/opencontainers/image-spec/releases.atom"
+
+  - name: "OCI Runtime Spec Releases"
+    type: rss
+    url: "https://github.com/opencontainers/runtime-spec/releases.atom"
+
+  - name: "OCI Distribution Spec Releases"
+    type: rss
+    url: "https://github.com/opencontainers/distribution-spec/releases.atom"
+
+  # ===================
+  # Registry / Distribution
+  # ===================
+
+  - name: "Distribution Releases"
+    type: rss
+    url: "https://github.com/distribution/distribution/releases.atom"
+
+filters:
+  time_window: "7d"
+  use_state: true
+  keywords:
+    include: []
+    exclude:
+      - "unsubscribe"
+      - "out of office"
+      - "auto-reply"
+      - "vacation"
+      - "automatic reply"
+  min_content_length: 50
+
+rate_limit:
+  delay_between_sources: 2
+  delay_between_requests: 1
+
+summarizer:
+  provider: gemini
+  model: gemini-2.0-flash
+  max_tokens: 8192
+  prompt_file: "../prompts/container-technologies.md"
+
+outputs:
+  - type: markdown
+    path: "digests/{slug}/{date}.md"
+    frontmatter: true
+
+  - type: email
+    enabled: false
+    format: plain
+    to: "${EMAIL_TO}"
+    subject: "[{name}] {time_window} digest - {date}"

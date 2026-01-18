@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "digest"
+version = "0.1.0"
+description = "A configuration-driven content aggregator that fetches, filters, and summarizes content from multiple sources"
+authors = ["Alex"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "digest", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyyaml = "^6.0"
+httpx = "^0.28.0"
+feedparser = "^6.0"
+python-dateutil = "^2.8"
+anthropic = "^0.18.0"
+openai = "^1.10.0"
+google-genai = "^1.59.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-asyncio = "^0.23"
+ruff = "^0.1.0"
+black = "^26.1.0"
+
+[tool.poetry.scripts]
+digest = "digest.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+src = ["src"]
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort
+    "UP",     # pyupgrade
+    "B",      # flake8-bugbear
+    "SIM",    # flake8-simplify
+]
+ignore = [
+    "E501",   # line too long (handled by formatter)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["digest"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
