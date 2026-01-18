@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "last_run": {
+    "timestamp": "2026-01-18T18:35:37.487998Z",
+    "success": true,
+    "items_processed": 45,
+    "digest_file": "digests/image-based-linux/2026-01-18.md"
+  },
+  "sources": {
+    "bootc Releases": {
+      "last_seen_date": "2026-01-16T15:37:49+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/572685958/v1.12.1"
+    },
+    "Fedora Planet": {
+      "last_seen_date": "2026-01-17T18:22:45+00:00",
+      "last_seen_id": "https://www.scrye.com/blogs/nirik/posts/2026/01/17/misc-fedora-bits-for-second-week-of-jan-2026/"
+    },
+    "Atomic Desktops Discourse": {
+      "last_seen_date": "2026-01-16T21:40:04+00:00",
+      "last_seen_id": "discussion.fedoraproject.org-topic-179648"
+    },
+    "Silverblue Discourse": {
+      "last_seen_date": "2026-01-15T04:54:17+00:00",
+      "last_seen_id": "discussion.fedoraproject.org-topic-179566"
+    },
+    "Kinoite Discourse": {
+      "last_seen_date": "2026-01-16T21:40:04+00:00",
+      "last_seen_id": "discussion.fedoraproject.org-topic-179648"
+    },
+    "Bootc Discourse": {
+      "last_seen_date": "2026-01-12T06:45:42+00:00",
+      "last_seen_id": "discussion.fedoraproject.org-topic-179368"
+    },
+    "CoreOS Mailing List": {
+      "last_seen_date": "2026-01-14T23:43:10+00:00",
+      "last_seen_id": "https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/message/6BK2EJOGSZ4TULPLK465TOFT362MNAFS/"
+    },
+    "Devel Mailing List (filtered)": {
+      "last_seen_date": "2026-01-18T07:56:22+00:00",
+      "last_seen_id": "https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/message/UCIKD4Y7ELW7S2QPUK3XDFVEE4JFNF4M/"
+    },
+    "Kairos Blog": {
+      "last_seen_date": "2026-01-15T00:00:00+00:00",
+      "last_seen_id": "https://kairos.io/blog/2026/01/15/welcome-william-rizzo-new-kairos-maintainer/"
+    }
+  }
+}
