@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "last_run": {
-    "timestamp": "2026-01-18T18:35:37.487998Z",
+    "timestamp": "2026-01-25T08:31:34.819798Z",
     "success": true,
-    "items_processed": 45,
-    "digest_file": "digests/image-based-linux/2026-01-18.md"
+    "items_processed": 46,
+    "digest_file": "digests/image-based-linux/2026-01-25.md"
   },
   "sources": {
     "bootc Releases": {
@@ -12,36 +12,48 @@
       "last_seen_id": "tag:github.com,2008:Repository/572685958/v1.12.1"
     },
     "Fedora Planet": {
-      "last_seen_date": "2026-01-17T18:22:45+00:00",
-      "last_seen_id": "https://www.scrye.com/blogs/nirik/posts/2026/01/17/misc-fedora-bits-for-second-week-of-jan-2026/"
+      "last_seen_date": "2026-01-24T17:27:25+00:00",
+      "last_seen_id": "https://www.scrye.com/blogs/nirik/posts/2026/01/24/misc-fedora-bits-for-third-week-of-jan-2026/"
     },
     "Atomic Desktops Discourse": {
-      "last_seen_date": "2026-01-16T21:40:04+00:00",
-      "last_seen_id": "discussion.fedoraproject.org-topic-179648"
+      "last_seen_date": "2026-01-21T07:06:23+00:00",
+      "last_seen_id": "discussion.fedoraproject.org-topic-179848"
     },
     "Silverblue Discourse": {
-      "last_seen_date": "2026-01-15T04:54:17+00:00",
-      "last_seen_id": "discussion.fedoraproject.org-topic-179566"
+      "last_seen_date": "2026-01-24T01:28:47+00:00",
+      "last_seen_id": "discussion.fedoraproject.org-topic-179999"
     },
     "Kinoite Discourse": {
-      "last_seen_date": "2026-01-16T21:40:04+00:00",
-      "last_seen_id": "discussion.fedoraproject.org-topic-179648"
+      "last_seen_date": "2026-01-22T14:27:08+00:00",
+      "last_seen_id": "discussion.fedoraproject.org-topic-179908"
     },
     "Bootc Discourse": {
       "last_seen_date": "2026-01-12T06:45:42+00:00",
       "last_seen_id": "discussion.fedoraproject.org-topic-179368"
     },
     "CoreOS Mailing List": {
-      "last_seen_date": "2026-01-14T23:43:10+00:00",
-      "last_seen_id": "https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/message/6BK2EJOGSZ4TULPLK465TOFT362MNAFS/"
+      "last_seen_date": "2026-01-22T18:00:25+00:00",
+      "last_seen_id": "https://lists.fedoraproject.org/archives/list/coreos@lists.fedoraproject.org/message/GDRSZFVXNZH3WI36WL75EZXZYYR3JZOE/"
     },
     "Devel Mailing List (filtered)": {
-      "last_seen_date": "2026-01-18T07:56:22+00:00",
-      "last_seen_id": "https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/message/UCIKD4Y7ELW7S2QPUK3XDFVEE4JFNF4M/"
+      "last_seen_date": "2026-01-25T07:12:01+00:00",
+      "last_seen_id": "https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/message/N3J5MLWHA54JYF2BPGLMWWROCPV6FE23/"
     },
     "Kairos Blog": {
       "last_seen_date": "2026-01-15T00:00:00+00:00",
       "last_seen_id": "https://kairos.io/blog/2026/01/15/welcome-william-rizzo-new-kairos-maintainer/"
+    },
+    "rpm-ostree Releases": {
+      "last_seen_date": "2026-01-22T19:30:54+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/15369584/v2026.1"
+    },
+    "Fedora CoreOS Discourse": {
+      "last_seen_date": "2026-01-22T14:05:32+00:00",
+      "last_seen_id": "discussion.fedoraproject.org-topic-179907"
+    },
+    "Talos Releases": {
+      "last_seen_date": "2026-01-22T09:27:45+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/109451092/v1.12.2"
     }
   }
 }
