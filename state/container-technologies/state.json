@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "last_run": {
+    "timestamp": "2026-01-25T08:31:36.487565Z",
+    "success": true,
+    "items_processed": 20,
+    "digest_file": "digests/container-technologies/2026-01-25.md"
+  },
+  "sources": {
+    "Moby Releases": {
+      "last_seen_date": "2026-01-19T13:49:55+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/7691631/docker-v29.2.0-rc.2"
+    },
+    "Docker Forums - Engine": {
+      "last_seen_date": "2026-01-22T09:22:08+00:00",
+      "last_seen_id": "forums.docker.com-topic-150908"
+    },
+    "Docker Forums - General": {
+      "last_seen_date": "2026-01-21T13:38:57+00:00",
+      "last_seen_id": "forums.docker.com-topic-150904"
+    },
+    "Podman Discussions": {
+      "last_seen_date": "2026-01-25T06:11:11+00:00",
+      "last_seen_id": "tag:github.com,2008:9385660"
+    },
+    "Podman Desktop Releases": {
+      "last_seen_date": "2026-01-22T22:10:26+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/465844859/v1.25.1"
+    },
+    "Buildah Releases": {
+      "last_seen_date": "2026-01-22T20:16:40+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/80134675/v1.21.6"
+    },
+    "Skopeo Releases": {
+      "last_seen_date": "2026-01-22T21:01:35+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/53356367/v1.11.4"
+    },
+    "BuildKit Releases": {
+      "last_seen_date": "2026-01-23T01:40:33+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/92969352/dockerfile/1.21.0-labs"
+    }
+  }
+}
