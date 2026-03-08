@@ -1,75 +1,75 @@
 {
   "schema_version": 1,
   "last_run": {
-    "timestamp": "2026-03-01T08:35:14.837268Z",
+    "timestamp": "2026-03-08T08:35:38.923151Z",
     "success": true,
-    "items_processed": 199,
-    "digest_file": "digests/embedded-yocto/2026-03-01.md"
+    "items_processed": 179,
+    "digest_file": "digests/embedded-yocto/2026-03-08.md"
   },
   "sources": {
     "Yocto Mailing List": {
-      "last_seen_date": "2026-02-28T15:55:54+00:00",
-      "last_seen_id": "https://lists.yoctoproject.org/g/yocto/message/66285"
+      "last_seen_date": "2026-03-07T16:50:46+00:00",
+      "last_seen_id": "https://lists.yoctoproject.org/g/yocto/message/66309"
     },
     "Yocto Documentation Mailing List": {
-      "last_seen_date": "2026-02-27T21:49:40+00:00",
-      "last_seen_id": "https://lists.yoctoproject.org/g/docs/message/9016"
+      "last_seen_date": "2026-03-05T17:13:40+00:00",
+      "last_seen_id": "https://lists.yoctoproject.org/g/docs/message/9077"
     },
     "meta-raspberrypi Commits": {
       "last_seen_date": "2026-02-10T16:15:29+00:00",
       "last_seen_id": "tag:github.com,2008:Grit::Commit/046a23892770accf32776bd16a2bf6ad534f42eb"
     },
     "Raspberry Pi Blog": {
-      "last_seen_date": "2026-02-26T10:27:43+00:00",
-      "last_seen_id": "https://www.raspberrypi.com/?p=134560"
+      "last_seen_date": "2026-03-06T10:40:54+00:00",
+      "last_seen_id": "https://www.raspberrypi.com/?p=134879"
     },
     "NVIDIA Developer Blog": {
-      "last_seen_date": "2026-03-01T07:00:00+00:00",
-      "last_seen_id": "https://developer.nvidia.com/blog/?p=112936"
+      "last_seen_date": "2026-03-05T17:00:00+00:00",
+      "last_seen_id": "https://developer.nvidia.com/blog/?p=113316"
     },
     "Jetson Forums": {
-      "last_seen_date": "2026-03-01T07:33:39+00:00",
-      "last_seen_id": "forums.developer.nvidia.com-topic-361997"
+      "last_seen_date": "2026-03-08T07:58:24+00:00",
+      "last_seen_id": "forums.developer.nvidia.com-topic-362740"
     },
     "Jetson AGX Orin Forums": {
-      "last_seen_date": "2026-02-28T08:28:21+00:00",
-      "last_seen_id": "forums.developer.nvidia.com-topic-361966"
+      "last_seen_date": "2026-03-07T20:04:27+00:00",
+      "last_seen_id": "forums.developer.nvidia.com-topic-362722"
     },
     "Jetson Orin Nano Forums": {
-      "last_seen_date": "2026-03-01T07:33:39+00:00",
-      "last_seen_id": "forums.developer.nvidia.com-topic-361997"
+      "last_seen_date": "2026-03-08T07:58:24+00:00",
+      "last_seen_id": "forums.developer.nvidia.com-topic-362740"
     },
     "meta-arm Mailing List": {
-      "last_seen_date": "2026-02-27T19:01:25+00:00",
-      "last_seen_id": "https://lists.yoctoproject.org/g/meta-arm/message/6928"
+      "last_seen_date": "2026-03-05T13:56:14+00:00",
+      "last_seen_id": "https://lists.yoctoproject.org/g/meta-arm/message/6943"
     },
     "OpenEmbedded Core Commits": {
-      "last_seen_date": "2026-02-27T09:05:02+00:00",
-      "last_seen_id": "tag:github.com,2008:Grit::Commit/be8cdcf13a658e9e81ff2f7b71d1c8c37a920ce7"
+      "last_seen_date": "2026-03-06T16:13:12+00:00",
+      "last_seen_id": "tag:github.com,2008:Grit::Commit/ac5e0160df78eef03470daf1f70a5f4d2dc0bac1"
     },
     "meta-openembedded Commits": {
-      "last_seen_date": "2026-02-25T06:30:26+00:00",
-      "last_seen_id": "tag:github.com,2008:Grit::Commit/6ba45c1f94e1c2015df940ec9efcd4568346df56"
+      "last_seen_date": "2026-03-04T08:01:38+00:00",
+      "last_seen_id": "tag:github.com,2008:Grit::Commit/0bc67b61ca52e85a5a882d809ba0c98d21cceac8"
     },
     "NVIDIA Jetson Downloads Page": {
-      "last_seen_date": "2026-03-01T07:00:45+00:00",
-      "last_seen_id": "https://blogs.nvidia.com/blog/nvidia-agentic-ai-blueprints-telco-reasoning-models/"
+      "last_seen_date": "2026-03-05T14:00:30+00:00",
+      "last_seen_id": "https://blogs.nvidia.com/blog/geforce-now-thursday-march-2026-games-list/"
     },
     "Yocto Announce": {
       "last_seen_date": "2026-02-27T00:53:11+00:00",
       "last_seen_id": "https://lists.yoctoproject.org/g/yocto-announce/message/374"
     },
     "meta-freescale Commits": {
-      "last_seen_date": "2026-02-28T18:53:50+00:00",
-      "last_seen_id": "tag:github.com,2008:Grit::Commit/f1c6050ed1914e04869c64901cd9724c3c68d178"
+      "last_seen_date": "2026-03-06T15:18:08+00:00",
+      "last_seen_id": "tag:github.com,2008:Grit::Commit/3be503e788c41d6eec8368dd9117e6bbd7f7a588"
     },
     "meta-freescale Mailing List": {
       "last_seen_date": "2026-01-21T14:26:25+00:00",
       "last_seen_id": "https://lists.yoctoproject.org/g/meta-freescale/message/24988"
     },
     "meta-tegra Commits": {
-      "last_seen_date": "2026-02-28T15:11:27+00:00",
-      "last_seen_id": "tag:github.com,2008:Grit::Commit/a54208d27bbb11a5bc7292f6068d17d58d3f9279"
+      "last_seen_date": "2026-03-07T15:45:06+00:00",
+      "last_seen_id": "tag:github.com,2008:Grit::Commit/6e45cefa406c5b803ea68797e9ad25238f827fdb"
     },
     "meta-freescale-3rdparty Commits": {
       "last_seen_date": "2026-02-26T15:50:17+00:00",
