@@ -1,0 +1,58 @@
+meta:
+  name: "Security Bulletins"
+  slug: "security-bulletins"
+  description: "Security advisories and vulnerability disclosures across the open-source ecosystem"
+  schedule: "0 7 * * 1,4"  # Monday and Thursday at 7am
+
+sources:
+  # oss-security mailing list (via SecLists.Org RSS)
+  - name: "oss-security"
+    type: rss
+    url: "https://seclists.org/rss/oss-sec.rss"
+
+  # Linux kernel CVE announcements (Atom feed from lore.kernel.org)
+  - name: "Linux Kernel CVE"
+    type: rss
+    url: "https://lore.kernel.org/linux-cve-announce/atom.xml"
+
+  # GitHub Security Advisories (public REST API)
+  - name: "GitHub Security Advisories"
+    type: rest_api
+    url: "https://api.github.com/advisories"
+    headers:
+      Accept: "application/vnd.github+json"
+      X-GitHub-Api-Version: "2022-11-28"
+    mapping:
+      id: "ghsa_id"
+      title: "summary"
+      url: "html_url"
+      date: "published_at"
+      body: "description"
+    pagination:
+      max_pages: 3
+
+filters:
+  time_window: "3d"
+  use_state: true
+  keywords:
+    include: []
+    exclude:
+      - "unsubscribe"
+      - "out of office"
+      - "auto-reply"
+  min_content_length: 30
+
+rate_limit:
+  delay_between_sources: 2
+  delay_between_requests: 1
+
+summarizer:
+  provider: gemini
+  model: gemini-2.0-flash
+  max_tokens: 8192
+  prompt_file: "../prompts/security-bulletins.md"
+
+outputs:
+  - type: markdown
+    path: "digests/{slug}/{date}.md"
+    frontmatter: true
