@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "last_run": {
+    "timestamp": "2026-03-22T08:38:04.517501Z",
+    "success": true,
+    "items_processed": 113,
+    "digest_file": "digests/security-bulletins/2026-03-22.md"
+  },
+  "sources": {
+    "oss-security": {
+      "last_seen_date": "2026-03-22T03:36:45+00:00",
+      "last_seen_id": "https://seclists.org/oss-sec/2026/q1/369"
+    },
+    "Linux Kernel CVE": {
+      "last_seen_date": "2026-03-20T08:14:08+00:00",
+      "last_seen_id": "urn:uuid:1d5be08a-8432-cab1-f3d0-149c5ecd5909"
+    },
+    "GitHub Security Advisories": {
+      "last_seen_date": "2026-03-20T21:55:31+00:00",
+      "last_seen_id": "GHSA-8fw8-q79c-fp9m"
+    }
+  }
+}
