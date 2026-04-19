@@ -1,23 +1,23 @@
 {
   "schema_version": 1,
   "last_run": {
-    "timestamp": "2026-04-12T08:53:02.836050Z",
+    "timestamp": "2026-04-19T08:57:28.151950Z",
     "success": true,
-    "items_processed": 114,
-    "digest_file": "digests/security-bulletins/2026-04-12.md"
+    "items_processed": 122,
+    "digest_file": "digests/security-bulletins/2026-04-19.md"
   },
   "sources": {
     "oss-security": {
-      "last_seen_date": "2026-04-12T04:34:37+00:00",
-      "last_seen_id": "https://seclists.org/oss-sec/2026/q2/108"
+      "last_seen_date": "2026-04-18T19:12:07+00:00",
+      "last_seen_id": "https://seclists.org/oss-sec/2026/q2/176"
     },
     "Linux Kernel CVE": {
-      "last_seen_date": "2026-04-12T05:36:26+00:00",
-      "last_seen_id": "urn:uuid:45396fee-2e28-a57d-81cf-33ed81b67200"
+      "last_seen_date": "2026-04-13T13:41:28+00:00",
+      "last_seen_id": "urn:uuid:06d807bf-6646-baf4-57d1-9f20bc6fb076"
     },
     "GitHub Security Advisories": {
-      "last_seen_date": "2026-04-10T22:11:04+00:00",
-      "last_seen_id": "GHSA-9cp7-j3f8-p5jx"
+      "last_seen_date": "2026-04-18T01:15:24+00:00",
+      "last_seen_id": "GHSA-8m29-fpq5-89jj"
     }
   }
 }
