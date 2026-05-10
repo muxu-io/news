@@ -1,46 +1,46 @@
 {
   "schema_version": 1,
   "last_run": {
-    "timestamp": "2026-05-03T09:24:03.667119Z",
+    "timestamp": "2026-05-10T09:40:52.932561Z",
     "success": true,
-    "items_processed": 22,
-    "digest_file": "digests/container-technologies/2026-05-03.md"
+    "items_processed": 21,
+    "digest_file": "digests/container-technologies/2026-05-10.md"
   },
   "sources": {
     "Moby Releases": {
-      "last_seen_date": "2026-05-01T07:40:30+00:00",
-      "last_seen_id": "tag:github.com,2008:Repository/7691631/docker-v29.4.2"
+      "last_seen_date": "2026-05-06T17:48:41+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/7691631/docker-v29.4.3"
     },
     "Docker Forums - Engine": {
-      "last_seen_date": "2026-05-02T11:58:23+00:00",
-      "last_seen_id": "forums.docker.com-topic-151604"
+      "last_seen_date": "2026-05-08T13:20:45+00:00",
+      "last_seen_id": "forums.docker.com-topic-151647"
     },
     "Docker Forums - General": {
-      "last_seen_date": "2026-05-02T09:14:51+00:00",
-      "last_seen_id": "forums.docker.com-topic-151602"
+      "last_seen_date": "2026-05-09T16:05:03+00:00",
+      "last_seen_id": "forums.docker.com-topic-151657"
     },
     "Podman Discussions": {
-      "last_seen_date": "2026-05-03T05:44:53+00:00",
-      "last_seen_id": "tag:github.com,2008:9994892"
+      "last_seen_date": "2026-05-09T12:56:40+00:00",
+      "last_seen_id": "tag:github.com,2008:10031081"
     },
     "Podman Desktop Releases": {
       "last_seen_date": "2026-04-28T15:04:54+00:00",
       "last_seen_id": "tag:github.com,2008:Repository/465844859/v1.27.1"
     },
     "Buildah Releases": {
-      "last_seen_date": "2026-04-17T18:46:49+00:00",
-      "last_seen_id": "tag:github.com,2008:Repository/80134675/v1.41.9"
+      "last_seen_date": "2026-05-07T20:13:15+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/80134675/v1.29.8"
     },
     "Skopeo Releases": {
       "last_seen_date": "2026-04-29T20:43:39+00:00",
       "last_seen_id": "tag:github.com,2008:Repository/53356367/v1.14.6"
     },
     "BuildKit Releases": {
-      "last_seen_date": "2026-03-31T12:58:15+00:00",
-      "last_seen_id": "tag:github.com,2008:Repository/92969352/v0.29.0"
+      "last_seen_date": "2026-05-07T01:32:49+00:00",
+      "last_seen_id": "tag:github.com,2008:Repository/92969352/v0.30.0-rc1"
     },
     "Podman Releases": {
-      "last_seen_date": "2026-04-14T17:56:41+00:00",
+      "last_seen_date": "2026-05-07T17:34:44+00:00",
       "last_seen_id": "tag:github.com,2008:Repository/109145553/v5.8.2"
     },
     "containerd Releases": {
@@ -60,8 +60,8 @@
       "last_seen_id": "tag:github.com,2008:Repository/28366058/v3.1.1"
     },
     "Podman Blog": {
-      "last_seen_date": "2026-05-01T17:21:55+00:00",
-      "last_seen_id": "https://blog.podman.io/?p=21891"
+      "last_seen_date": "2026-05-04T14:37:44+00:00",
+      "last_seen_id": "https://blog.podman.io/?p=21894"
     }
   }
 }
